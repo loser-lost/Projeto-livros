@@ -43,7 +43,7 @@ class AdminController extends Controller
             return redirect()->route('admin.dashboard');
         }
         return back()->withErrors(
-                ['email' => 'the provided credentialsdo not match our records.']
+                ['email' => 'Email e/ou Senha incorretos.']
             
         );
     }

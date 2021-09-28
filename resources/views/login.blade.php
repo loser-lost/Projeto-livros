@@ -74,12 +74,12 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
     <form method="post" action="{{ route('admin.login.do')}}">
 		@csrf
-    	<input type="text" name="email" placeholder="email" value="loser6535@gmail.com" required="required" />
+    	<input type="email" name="email" placeholder="email" value="loser6535@gmail.com" required="required" />
         <input type="password" name="password" placeholder="Senha" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Entrar.</button>
 		
 		@if($errors->any())
-		<h4>{{$errors->first()}}</h4>
+		<h1>{{$errors->first()}}</h1>
 		@endif
 	</form>
 
