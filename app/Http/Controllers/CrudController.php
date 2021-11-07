@@ -31,7 +31,7 @@ class CrudController extends Controller
     public function index(){
         //dd($this->objLivros->all());
         //dd($this->objRel->find(1));
-        $livro=$this->objLivros->all();
+        $livro=$this->objLivros->all()->sortBy(callback:'titulo');
         return view('Admin/read', compact(var_name:'livro'));
     }
 
