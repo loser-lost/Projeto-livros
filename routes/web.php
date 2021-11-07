@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CrudController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -17,7 +18,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 //Route::get('/login', function () {
 //   return view('login');
@@ -33,6 +34,8 @@ Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.log
 
 Route::post('/admin/login/do', [AdminController::class, 'autenticate'])->name('admin.login.do');
 
+Route::get('admin/read', [CrudController::class, 'read'])->name('admin.pagina.ler');
 
+Route::get('admin/readtest', [CrudController::class, 'index'])->name('admin.pagina.ler.teste');
 
 //route::get('/admin', [AdminController::class, 'dashboard']);

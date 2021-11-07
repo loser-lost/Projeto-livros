@@ -66,7 +66,8 @@ input {
 	transition: box-shadow .5s ease;
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
-</style></head><body>
+</style></head>
+<body>
 <div class="login">
 	<h1>Login</h1>
 
@@ -74,7 +75,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
     <form method="post" action="{{ route('admin.login.do')}}">
 		@csrf
-    	<input type="email" name="email" placeholder="email" value="loser6535@gmail.com" required="required" />
+    	<input type="email" name="email" placeholder="email" value="kaylee95@example.net" required="required" />
         <input type="password" name="password" placeholder="Senha" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Entrar.</button>
 		
