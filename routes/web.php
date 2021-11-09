@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers;
 use App\Http\Controllers\AdminController;
+
+use App\Http\Controllers\CrudController;
+use App\Http\Controllers\ResurceController;
+
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -24,6 +28,7 @@ Route::get('/', function () {
 //});
 
 //Route::get('/admin/inserir', [AdminController::class, 'InserirUser'])->name('admin.inserir.usuario');
+Route::resource('livro', CrudController::class);
 
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
