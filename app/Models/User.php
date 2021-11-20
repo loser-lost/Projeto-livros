@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function favo(){
+        //return $this->belongsToMany('App\Models\Livros');
+        
+         return $this->belongsToMany(Livros::class, table: 'user_livro', foreignPivotKey:'id_users', relatedPivotKey:'id_livros');
+      }
 }
