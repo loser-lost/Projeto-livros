@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ResurceController;
-
+use App\Http\Controllers\SessionControler;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -20,9 +20,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CrudController::class, 'showel'])->name('inicio');
+
 //Route::get('/login', function () {
 //   return view('login');
 //});
@@ -30,7 +29,15 @@ Route::get('/', function () {
 //Route::get('/admin/inserir', [AdminController::class, 'InserirUser'])->name('admin.inserir.usuario');
 Route::resource('livro', CrudController::class);
 
+Route::resource('User', CadastroController::class);
+
+Route::get('user/cadastro', [CadastroController::class, 'Cadastro'])->name('cad.user');
+
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+route::get('admin/dashboard/favoritos', [AdminController::class, 'favoritos'])->name('admin.favoritos');
+
+Route::get('/admin/login/session', [SessionControler::class, 'session'])->name('user.sessao');
 
 Route::get('/admin/login', [AdminController::class, 'Loginform'])->name('admin.login');
 

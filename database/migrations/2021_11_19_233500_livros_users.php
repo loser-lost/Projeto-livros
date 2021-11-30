@@ -15,9 +15,12 @@ class LivrosUsers extends Migration
     {
         Schema::create('livros_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_users');
-            $table->unsignedBigInteger('id_livros');
+            $table->string('id_users');
+            $table->string('id_livros');
             $table->timestamps();
+            $table->updated_at();
+            $table->criated_at();
+            
         });
 
         Schema::table('livros_users', function (Blueprint $table) {

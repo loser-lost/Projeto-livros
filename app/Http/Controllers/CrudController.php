@@ -26,8 +26,8 @@ class CrudController extends Controller
         //dd($this->objLivros->all());
         //dd($this->objRel->find(1));
         $livro=$this->objLivros->all()->sortBy(callback:'titulo');
+       
         return view('Admin/read', compact(var_name:'livro'));
-
     }
 
   
@@ -45,6 +45,13 @@ class CrudController extends Controller
     
     }
     
+    public function showel(){
+        
+    $livro=$this->objLivros->all()->sortBy(callback:'titulo');
+    return view('welcome', compact(var_name:'livro'));
+    
+    }
+
      /**
      * Show the form for creating a new resource.
      *
